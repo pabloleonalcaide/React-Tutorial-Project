@@ -1,11 +1,11 @@
 import React from "react";
+import styled from 'styled-components'
 import { ToastsContainer, ToastsStore } from "react-toasts";
 
 import PlayerRow from "./PlayerRow";
 import Field from "./Field";
 
 import { playersList } from "../players";
-import "../index.css";
 const myTeam = playersList;
 
 class PlayersTable extends React.Component {
@@ -17,7 +17,7 @@ class PlayersTable extends React.Component {
   }
   render() {
     return (
-      <div className="mainContainer">
+      <MainContainer>
         <table>
           <thead>
             <h2>Plantilla</h2>
@@ -28,7 +28,7 @@ class PlayersTable extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {Object.keys(myTeam).map((player) => (
+            {Object.keys(myTeam).map(player => (
               <PlayerRow
                 name={player}
                 position={myTeam[player]}
@@ -40,8 +40,17 @@ class PlayersTable extends React.Component {
           </tbody>
         </table>
         <Field />
-      </div>
+      </MainContainer>
     );
   }
 }
+const MainContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  > * {
+    flex: 1;
+    text-align: center;
+  }
+`;
+
 export default PlayersTable;
