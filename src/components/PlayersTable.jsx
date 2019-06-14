@@ -1,6 +1,5 @@
 import React from "react";
-import styled from 'styled-components'
-import { ToastsContainer, ToastsStore } from "react-toasts";
+import styled from "styled-components"
 
 import PlayerRow from "./PlayerRow";
 import Field from "./Field";
@@ -10,10 +9,7 @@ const myTeam = playersList;
 
 class PlayersTable extends React.Component {
   onSelectedPlayer(name, position, selected) {
-    let selectedString = selected ? "Seleccionado" : "No Seleccionado";
-    ToastsStore.success(
-      name + " en posición " + position + " está " + selectedString
-    );
+
   }
   render() {
     return (
@@ -36,7 +32,6 @@ class PlayersTable extends React.Component {
                 onSelectedPlayer={this.onSelectedPlayer}
               />
             ))}
-            <ToastsContainer store={ToastsStore} />
           </tbody>
         </table>
         <Field />
