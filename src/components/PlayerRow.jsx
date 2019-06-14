@@ -1,5 +1,5 @@
-import React from 'react'
-import propsTypes from 'prop-types'
+import React from "react";
+import propsTypes from "prop-types";
 
 class PlayerRow extends React.Component{
     state = {

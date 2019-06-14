@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react"
+import styled from "styled-components"
 
-import Product from './Product'
+import Product from "./Product"
 const productInfo = {
-    book: {desc: 'a book', price: 12},
-    pen: {desc: 'a pen', price: 2},
-    rubber: {desc: 'a rubber', price: 3},
-    pencil: {desc: 'a pencil', price: 1}
+    book: {desc: "a book", price: 12},
+    pen: {desc: "a pen", price: 2},
+    rubber: {desc: "a rubber", price: 3},
+    pencil: {desc: "a pencil", price: 1}
 }
 class ShoppingCart extends React.Component{
 
@@ -16,7 +16,7 @@ class ShoppingCart extends React.Component{
         rubber: 0,
         pencil: 0
     }
-    onProductChange = (productName, amount)=>{
+    onProductChange = (productName, amount) => {
         this.setState({
             [productName]: amount * productInfo[productName].price
         })

@@ -8,25 +8,25 @@ class MyComponent extends React.Component{
     }
 
     static defaultProps = {
-        surname: 'Leon'
+        surname: "Leon"
     }
     componentWillMount(){
-        console.log('componentWillMount')
+        console.log("componentWillMount");
     }
     componentDidMount(){
-        console.log('componentDidMount')
+        console.log("componentDidMount");
     }
     shouldComponentUpdate(nextProps,nextState){
-        console.log('shouldComponentUpdate')
+        console.log("shouldComponentUpdate");
         return true
     }
     componentWillUpdate(nextProps, nextState){
-        console.log('Antiguo state' + this.state.clicked)
-        console.log('Próximo state' + nextState.clicked)
-        console.log('willUpdate')
+        console.log("Antiguo state" + this.state.clicked);
+        console.log("Próximo state" + nextState.clicked);
+        console.log("willUpdate");
     }
     componentDidUpdate(){
-        console.log('didUpdate');
+        console.log("didUpdate");
     }
 
     onclick = ()=>{
@@ -35,8 +35,8 @@ class MyComponent extends React.Component{
         })
     }
     render(){
-        const { name, surname, age} = this.props
-        const { clicked } = this.state
+        const { name, surname, age} = this.props;
+        const { clicked } = this.state;
         return (
             <div>
                 <div>Hi {name} {surname} you are {age} years old </div>

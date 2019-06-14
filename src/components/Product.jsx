@@ -2,18 +2,16 @@ import React from 'react'
 import propsTypes from 'prop-types'
 class Product extends React.Component {
 
-    onAmountChange = (e) =>{
-        const { name, onProductChange} = this. props
-        const newAmount = parseInt(e.target.value,10)
-        console.log(name , newAmount)
-        onProductChange(name, newAmount)
+    onAmountChange = (e) => {
+        const { name, onProductChange} = this. props;
+        const newAmount = parseInt(e.target.value,10);
+        onProductChange(name, newAmount);
     }
     render(){
         const {name, desc, price } = this.props
     
         return(
-        <tr>
-            
+        <tr>  
             <td>{name}</td>
             <td>{desc}</td>
             <td>{price}</td>
