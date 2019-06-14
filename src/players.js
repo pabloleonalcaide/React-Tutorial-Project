@@ -1,17 +1,21 @@
+import {positions} from './positions'
+
 export const playersList = {
-    0: {name: 'Batistuta', position: 'Defensa'},
-    1: {name: 'Del Piero', position: 'Delantero'},
-    2: {name: 'Lopetegui', position: 'Delantero'},
-    3: {name: 'Casillas', position: 'Portero'},
-    4: {name: 'Modrick', position: 'Medio Campo'},
-    5: {name: 'Ronaldo', position: 'Delantero'},
-    6: {name: 'Romario', position: 'Delantero'},
-    7: {name: 'Cañizares', position: 'Portero'},
-    8: {name: 'Guerrero', position: 'Medio Campo'},
-    9: {name: 'F. Hierro', position: 'Defensa'},
-    10: {name: 'Raúl', position: 'Delantero'},
-    11: {name: 'Iniesta', position: 'Medio Campo'},
+    'Batistuta': positions.DEFENDER,
+    'Del Piero': positions.STRIKER,
+    'Lopetegui': positions.STRIKER,
+    'Casillas': positions.GOALKEEPER,
+    'Modrick': positions.MIDFIELDER,
+    'Ronaldo': positions.STRIKER,
+    'Romario': positions.STRIKER,
+    'Cañizares': positions.GOALKEEPER,
+    'Guerrero': positions.MIDFIELDER,
+    'F. Hierro': positions.DEFENDER,
+    'Raúl': positions.STRIKER,
+    'Iniesta': positions.MIDFIELDER,
 
 }
 
-export default {playersList}
+export default {
+    playersList
+}

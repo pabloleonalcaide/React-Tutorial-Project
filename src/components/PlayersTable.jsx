@@ -28,11 +28,11 @@ class PlayersTable extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {Object.keys(myTeam).map(singlePlayer => (
+            {Object.keys(myTeam).map((player) => (
               <PlayerRow
-                name={myTeam[singlePlayer].name}
-                position={myTeam[singlePlayer].position}
-                key={singlePlayer}
+                name={player}
+                position={myTeam[player]}
+                key={player}
                 onSelectedPlayer={this.onSelectedPlayer}
               />
             ))}
