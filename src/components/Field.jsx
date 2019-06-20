@@ -1,12 +1,42 @@
-import React from "react"
-class Field extends React.Component{
-    render(){
-        return(
-            <div className="fieldDiv">
-                <h2>Alineación</h2>
-            </div>
-        )
-    }
+import React from "react";
+import styled from "styled-components";
+import propsTypes from "prop-types";
+
+import { playersList } from "../players";
+const team = playersList;
+
+class Field extends React.Component {
+  static defaultProps = {
+    players: {}
+  };
+
+  render() {
+      let { players } = this.props
+    return (
+      <div>
+        <h2>Alineación</h2>
+        <ul>
+          {Object.keys(players).map(player => (
+            <li>{player} - {team[player]}</li>
+          ))}
+        </ul>
+        <PlayingField>
+          <div className="goal" />
+          <div className="defenseLine" />
+          <div className="midfield" />
+          <div className="atackLine" />
+        </PlayingField>
+      </div>
+    );
+  }
 }
 
-export default Field
+Field.propsTypes = {
+  players: propsTypes.object.isRequired
+};
+
+const PlayingField = styled.div`
+  border: 1px solid green;
+  height: 100%;
+`;
+export default Field;

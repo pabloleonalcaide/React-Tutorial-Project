@@ -1,7 +1,7 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
-import Product from "./Product"
+import Product from "./Product";
 const productInfo = {
     book: {desc: "a book", price: 12},
     pen: {desc: "a pen", price: 2},

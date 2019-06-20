@@ -8,8 +8,8 @@ import { playersList } from "../players";
 const myTeam = playersList;
 
 class PlayersTable extends React.Component {
-  onSelectedPlayer(name, position, selected) {
-
+  onSelectedChange(name, selected) {
+    
   }
   render() {
     return (
@@ -29,12 +29,12 @@ class PlayersTable extends React.Component {
                 name={player}
                 position={myTeam[player]}
                 key={player}
-                onSelectedPlayer={this.onSelectedPlayer}
+                onSelectedChange={this.onSelectedChange}
               />
             ))}
           </tbody>
         </table>
-        <Field />
+        <Field players={myTeam}/>
       </MainContainer>
     );
   }

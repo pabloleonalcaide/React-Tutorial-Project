@@ -2,17 +2,16 @@ import React from "react";
 import propsTypes from "prop-types";
 
 class PlayerRow extends React.Component{
-    state = {
-        selected : false
+
+    static defaultProps = {
+        selected: false
     }
 
-    onClick = ()=>{
-        const {name, position, onSelectedPlayer} = this.props
-        const nowSelected = !this.state.selected
-        this.setState({
-            selected: nowSelected
-        })
-        onSelectedPlayer(name,position,nowSelected)
+    onChange = ()=>{
+        const {name, selected, onSelectedChange} = this.props
+        const nowSelected = !selected
+
+        onSelectedChange(name,nowSelected)
     }
     render() {
         const {name, position} = this.props
@@ -20,7 +19,7 @@ class PlayerRow extends React.Component{
             <tr>
                 <td>{name}</td>
                 <td>{position}</td>
-                <td><input type="checkbox" onClick={this.onClick}/></td>
+                <td><input type="checkbox" onChange={this.onChange}/></td>
             </tr>
         )
     }
@@ -28,6 +27,8 @@ class PlayerRow extends React.Component{
 PlayerRow.propsTypes = {
     name: propsTypes.string.isRequired,
     position: propsTypes.string.isRequired,
-    onSelectedPlayer: propsTypes.func.isRequired
+    selected: propsTypes.bool.isRequired,
+    onSelectedChange: propsTypes.func.isRequired
 }
+
 export default PlayerRow;
