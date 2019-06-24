@@ -1,16 +1,31 @@
 import React from "react";
-import styled from "styled-components"
+import styled from "styled-components";
 
 import PlayerRow from "./PlayerRow";
 import Field from "./Field";
 
 import { playersList } from "../players";
+
 const myTeam = playersList;
 
 class PlayersTable extends React.Component {
-  onSelectedChange(name, selected) {
-    
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedPlayers: {}
+    };
   }
+
+  onSelectedChange = (name, selected) => {
+    if (selected) {
+      let newSelectedPlayers = this.state.selectedPlayers;
+      newSelectedPlayers[name] = playersList[name];
+      this.setState(prevState => ({
+        selectedPlayers: { ...prevState.selectedPlayers, ...newSelectedPlayers }
+      }));
+    }
+  };
+
   render() {
     return (
       <MainContainer>
@@ -34,7 +49,7 @@ class PlayersTable extends React.Component {
             ))}
           </tbody>
         </table>
-        <Field players={myTeam}/>
+        <Field players={this.state.selectedPlayers} />
       </MainContainer>
     );
   }
