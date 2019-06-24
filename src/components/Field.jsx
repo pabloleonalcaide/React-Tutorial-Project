@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import propsTypes from "prop-types";
+import React from 'react';
+import styled from 'styled-components';
+import propsTypes from 'prop-types';
 
-import { playersList } from "../players";
+import { playersList } from '../players';
 const team = playersList;
 
 class Field extends React.Component {
@@ -15,16 +15,15 @@ class Field extends React.Component {
     return (
       <div>
         <h2>Alineación</h2>
-        <ul>
-          {Object.keys(players).map(player => (
-            <li>{player} - {team[player]}</li>
-          ))}
-        </ul>
         <PlayingField>
-          <div className="goal" />
-          <div className="defenseLine" />
-          <div className="midfield" />
-          <div className="atackLine" />
+          <div className="goal"></div>
+          <div className="defenseLine"></div>
+          <div className="midfield"></div>
+          <div className="atackLine"></div>
+          {Object.keys(players).map(player => (            
+             <p>{player} - {team[player]}</p>
+          ))}
+          
         </PlayingField>
       </div>
     );

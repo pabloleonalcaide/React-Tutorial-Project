@@ -17,13 +17,15 @@ class PlayersTable extends React.Component {
   }
 
   onSelectedChange = (name, selected) => {
+    let newSelectedPlayers = this.state.selectedPlayers;
     if (selected) {
-      let newSelectedPlayers = this.state.selectedPlayers;
       newSelectedPlayers[name] = playersList[name];
-      this.setState(prevState => ({
-        selectedPlayers: { ...prevState.selectedPlayers, ...newSelectedPlayers }
-      }));
+    } else {
+      delete newSelectedPlayers[name];
     }
+    this.setState(prevState => ({
+      selectedPlayers: { ...prevState.selectedPlayers, ...newSelectedPlayers }
+    }));
   };
 
   render() {
