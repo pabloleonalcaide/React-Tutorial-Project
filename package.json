@@ -14,7 +14,7 @@
     "react-toasts": "^3.0.3",
     "serve-index": "^1.9.1",
     "sockjs": "^0.3.19",
-    "styled-components": "^4.3.1"
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {},
   "scripts": {
