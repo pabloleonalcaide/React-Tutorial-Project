@@ -9,7 +9,7 @@
     "express": "^4.17.1",
     "range-parser": "^1.2.1",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react-dom": "^16.13.0",
     "react-scripts": "3.4.1",
     "react-toasts": "^3.0.4",
     "serve-index": "^1.9.1",
