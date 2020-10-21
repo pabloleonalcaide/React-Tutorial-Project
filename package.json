@@ -10,7 +10,7 @@
     "range-parser": "^1.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "3.4.4",
     "react-toasts": "^3.0.4",
     "serve-index": "^1.9.1",
     "sockjs": "^0.3.20",
